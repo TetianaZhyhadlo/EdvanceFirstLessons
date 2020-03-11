@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EdvanceC
 {
-    public class Book : Library, IBookInterest
+    sealed class Book : Library, IBookInterest, IEBook1
     {
         int quantity;
         string direction;
@@ -92,7 +92,14 @@ namespace EdvanceC
         {
             Console.WriteLine(a);
         }
-        
+
+        void IEBook1.BookPrice()
+        {
+            
+            Console.WriteLine("Сегодня всё бесплатно!");
+
+        }
+
     }
 
 }

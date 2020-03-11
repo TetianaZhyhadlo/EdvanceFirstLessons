@@ -8,7 +8,7 @@ namespace EdvanceC
     {
         public void Extension()
         {
-
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
         }
     }
 }

@@ -9,6 +9,16 @@ namespace EdvanceC
         int quantity;
         string direction;
         int bookPrice;
+        public enum WeekDays
+        {
+            Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday,
+            Sunday
+        }
         public string Type { get; set; }
         public string Name { get; set; }
         public int BookCost

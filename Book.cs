@@ -4,11 +4,24 @@ using System.Text;
 
 namespace EdvanceC
 {
-    public class Book : Library
+    public class Book : Library, IBookInterest
     {
         int quantity;
+        string direction;
+        int bookPrice;
         public string Type { get; set; }
         public string Name { get; set; }
+        public int BookCost
+        {
+            get 
+            {
+                return bookPrice;
+            }
+            set
+            {
+                BookCost = bookPrice;
+            }
+        }
 
         internal int PageQuantity
         {
@@ -19,6 +32,18 @@ namespace EdvanceC
             set
             {
                 PageQuantity = quantity;
+            }
+        }
+
+        public string InterestType
+        {
+            get
+            {
+                return direction;
+            }
+            set
+            {
+                InterestType = direction;
             }
         }
 
@@ -48,5 +73,26 @@ namespace EdvanceC
             Console.WriteLine("Люблю читать книги");
         }
 
+        public void BookPrice()
+        {
+            Book a = new Book();
+            Console.WriteLine(a.BookCost);
+
+        }
+        public static bool Equals(Book a,Book b)
+        {
+            bool same = false;
+            if (a == b)
+            {
+                same = true;
+            }
+            return same;
+        }
+        public static void ToString(int a)
+        {
+            Console.WriteLine(a);
+        }
+        
     }
+
 }

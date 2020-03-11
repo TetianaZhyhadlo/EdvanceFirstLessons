@@ -6,6 +6,12 @@ namespace EdvanceC
 {
     public abstract class Library
     {
+        public abstract void MyLibrary();
+
+        public virtual void ShowLibrary()
+        {
+            Console.WriteLine("У меня большая библиотека.");
+        }
 
     }
 }

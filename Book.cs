@@ -9,10 +9,10 @@ namespace EdvanceC
         int quantity;
         public string Type { get; set; }
         public string Name { get; set; }
-        
+
         internal int PageQuantity
         {
-            get 
+            get
             {
                 return quantity;
             }
@@ -30,9 +30,23 @@ namespace EdvanceC
         {
             return a.PageQuantity;
         }
-        static void BookCount()
+        static int count;
+        public static void BookCount()
         {
-
+            {
+                count++;
+            }
+            Console.WriteLine("Количество объектов:" + count);
         }
+        public override void ShowLibrary()
+        {
+            base.ShowLibrary();
+            Console.WriteLine("У меня большая библиотека.");
+        }
+        public override void MyLibrary()
+        {
+            Console.WriteLine("Люблю читать книги");
+        }
+
     }
 }

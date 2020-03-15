@@ -9,6 +9,8 @@ namespace EdvanceC
         int quantity;
         string direction;
         int bookPrice;
+        string name;
+        string bookAuthor;
         public enum WeekDays
         {
             Monday,
@@ -19,9 +21,33 @@ namespace EdvanceC
             Saturday,
             Sunday
         }
+        public string Author
+        {
+            get
+            {
+                return bookAuthor;
+            }
+            set 
+            {
+                Author = bookAuthor;
+            }
+        }
         public string Type { get; set; }
-        public string Name { get; set; }
-        public int BookCost
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if (name.Length > 50)
+                    throw new BookException("Название книги должно содержать менее 50 символов.");
+                else
+                    Name = name;
+            }
+        }
+        internal int BookCost
         {
             get 
             {
@@ -33,16 +59,13 @@ namespace EdvanceC
             }
         }
 
-        internal int PageQuantity
+        public int PageQuantity
         {
             get
             {
                 return quantity;
             }
-            set
-            {
-                PageQuantity = quantity;
-            }
+            
         }
 
         public string InterestType
